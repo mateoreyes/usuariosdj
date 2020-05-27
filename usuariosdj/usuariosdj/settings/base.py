@@ -24,7 +24,9 @@ DJANGO_APPS = (
 )
 
 # aplicciones para el entorno local
-LOCAL_APPS = ()
+LOCAL_APPS = (
+    'applications.users',
+)
 # aplicaciones de terceros
 THIRD_PARTY_APPS = ()
 # indicamos que las aplicaciones son las sumnas de las anteriores
@@ -80,6 +82,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# especificamos un nuevo modelo de usuarios al crear nosotros la aplicacion users
+# se especifica aplicacion.modelo
+AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
