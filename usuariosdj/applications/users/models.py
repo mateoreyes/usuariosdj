@@ -14,8 +14,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     username = models.CharField(max_length=10,unique=True)
     email = models.EmailField(max_length=254)
-    nombres = models.CharField (max_length=30)
-    apellidos = models.CharField (max_length=30)
+    nombres = models.CharField (max_length=30, blank=True)
+    apellidos = models.CharField (max_length=30,blank=True)
     genero = models.CharField(max_length=1,choices=GENERO_CHOICES,blank=True)
     # especificamos que el campo que sera utilizado para la autenticacion
     USERNAME_FIELD = 'username'
