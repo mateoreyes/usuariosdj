@@ -19,3 +19,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     genero = models.CharField(max_length=1,choices=GENERO_CHOICES,blank=True)
     # especificamos que el campo que sera utilizado para la autenticacion
     USERNAME_FIELD = 'username'
+    # especificamos los campos que obligatoriamente debe solicitar
+    REQUIRED_FIELDS = ['email',]
+
+    
