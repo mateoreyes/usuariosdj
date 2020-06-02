@@ -17,6 +17,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     nombres = models.CharField (max_length=30, blank=True)
     apellidos = models.CharField (max_length=30,blank=True)
     genero = models.CharField(max_length=1,choices=GENERO_CHOICES,blank=True)
+    # este campo se hereda de AbstractBaseUser, si no se incluye da error
+    is_staff = models.BooleanField(default=False)
     # especificamos que el campo que sera utilizado para la autenticacion
     USERNAME_FIELD = 'username'
     # especificamos los campos que obligatoriamente debe solicitar
